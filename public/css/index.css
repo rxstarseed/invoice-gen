@@ -103,3 +103,14 @@ input, select {
 
 /*>//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<-*/
 
+.product-card-accordian{
+    line-height: 50px;
+}
+
+.product-card, .product-card-accordian{
+    height: 50px;
+}
+
+.product-active{
+    height: fit-content;
+}
