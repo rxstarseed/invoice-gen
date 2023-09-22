@@ -102,7 +102,9 @@ input, select {
 }
 
 /*>//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<-*/
-
+*{
+    transition: .3s;
+}
 .product-card-accordian{
     line-height: 50px;
 }
@@ -111,6 +113,30 @@ input, select {
     height: 50px;
 }
 
-.product-active{
-    height: fit-content;
+.input{
+    visibility: hidden;
+    display: none;
 }
+
+.active{
+    height: fit-content !important;
+  }
+
+.addBtn{
+    position: absolute;
+    left: -50px;
+    top: 5px;
+    border: none;
+}
+
+.accordion-button:after {
+    display: none;
+   }
+
+   .list-group-item:focus{
+    border:  2px solid plum;
+   }
+
+   label{
+    z-index: 99999999;
+   }
