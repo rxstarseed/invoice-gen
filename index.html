@@ -17,9 +17,9 @@
 </head>
 
 <body class="bg-light">
-  <div class="card text-center m-4">
+  <div class="card gen-card text-center m-4">
     <div class="card-header">
-      Featured
+      Invoice Generator 
     </div>
     <div class="card-body border-0">
       <div class="accordion border-0" id="basicDetails">
@@ -38,29 +38,29 @@
             <div class="accordion-body border-0">
               <form>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Name of Business"
+                  <input type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Name of Business"
                     placeholder="Name of Business" aria-label="Name of Business" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="First Name"
+                  <input type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="First Name"
                     placeholder="First Name" aria-label="First Name">
                   <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Last Name"
                     placeholder="Last Name" aria-label="Last Name">
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Street Address"
+                  <input type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Street Address"
                     placeholder="Street Address" aria-label="Street Address">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="City"
+                  <input type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="City"
                     placeholder="City" aria-label="City">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Zip Code"
+                  <input type="number" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Zip Code"
                     placeholder="Zip Code" aria-label="Zip Code">
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Phone Number"
+                  <input type="number" id="businessNum" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Phone Number"
                     placeholder="Phone Number" aria-label="Phone Number">
                 </div>
                 <div class="input-group">
-                  <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Email"
+                  <input type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Email"
                     placeholder="Email" aria-label="Email">
                 </div>
               </form>
@@ -118,9 +118,9 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#basicDetails">
             <div class="accordion-body m-0 p-0 border-0">
-              <ul id="itemList" class="list-group border-0">
+              <ul id="itemList" class="list-group border-0 mt-1">
                 <li value="1" class="list-group-item d-flex m-0 p-0 border-0">
-                  <button id="AddItem" onclick="addItem(this)" class="btn text-success addBtn"><svg
+                  <button id="AddItem" onclick="addItem(this)" class="btn addBtn"><svg
                       xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                       class="bi bi-plus-circle" viewBox="0 0 16 16">
                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -128,23 +128,23 @@
                         d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                     </svg>
                   </button>
-                  <div  class="card w-100 product-card active">
-                    <div onclick="openClose(this)" class="card-header bg-transparent border-0 product-card-accordian m-0 p-0">
-
-                      <label onclick="test()" class="form-check-label">First checkbox</label>
-                      <button onclick="removeItem(this)" class="btn float-end text-danger"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                          height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
-                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                        </svg></button>
+                  <div class="card w-100 product-card">
+                    <div onclick="toggle(this)" class="card-header bg-transparent border-0 product-card-accordian m-0 p-0">
+                      <label class="form-check-label">Product Name</label>
                     </div>
+                    <button onclick="removeItem(this)" class="btn rmvBtn float-end position-absolute top-0 end-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                        </svg>
+                      </button>
                     <div class="overflow-hidden">
                       <div class="input-group">
-                        <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Product Name"
-                          placeholder="Product Name" aria-label="Product Name">
-                        <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Price"
+                        <input type="text" class="form-control border-0 w-50" data-bs-toggle="tooltip" data-bs-title="Desc."
+                          placeholder="Desc." aria-label="Desc.">
+                        <input type="number" class="form-control border-0 w-25" data-bs-toggle="tooltip" data-bs-title="Price"
                           placeholder="Price" aria-label="Price">
-                        <input type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Quantity"
+                        <input type="Number" class="form-control border-0 w-25" data-bs-toggle="tooltip" data-bs-title="Quantity"
                           placeholder="Quantity" aria-label="Quantity">
                       </div>
                     </div>
@@ -158,12 +158,9 @@
       </div>
     </div>
     <div class="card-footer text-body-secondary">
-      <button class="btn btn-primary w-100"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-          fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
-          <path
-            d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-          <path
-            d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+      <button class="btn preview-btn text-white w-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-play-fill float-start" viewBox="0 0 16 16">
+          <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
         </svg> Preview</button>
     </div>
   </div>

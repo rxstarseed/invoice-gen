@@ -105,11 +105,28 @@ input, select {
 *{
     transition: .3s;
 }
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: none;
+  background-color: #f4f4f4;
+  border: none;
+  color: #8c00ff;
+}
 .product-card-accordian{
     line-height: 50px;
 }
 
-.product-card, .product-card-accordian{
+.product-card, .product-card-accordian, input, .btn{
     height: 50px;
 }
 
@@ -119,13 +136,19 @@ input, select {
 }
 
 .active{
-    height: fit-content !important;
+    height: auto !important;
+    border: #8c00ff 2px solid !important;
+    -webkit-box-shadow:0px 0px 24px 0px rgba(132,0,255,0.2);
+-moz-box-shadow: 0px 0px 24px 0px rgba(132,0,255,0.2);
+box-shadow: 0px 0px 24px 0px rgba(132,0,255,0.2);
   }
 
+  .focusInput, .addBtn{
+    color: #8c00ff;
+  }
 .addBtn{
     position: absolute;
-    left: -50px;
-    top: 5px;
+    left: -45px;
     border: none;
 }
 
@@ -140,3 +163,44 @@ input, select {
    label{
     z-index: 99999999;
    }
+   
+   .text-success{
+    color: rgb(48, 205, 0) !important;
+    font-weight: bolder;
+   }
+   .rmvBtn{
+    border: none;
+    color: #cccccc;
+   }
+
+   .active > .rmvBtn{
+display: none;
+   }
+
+   .accordion-button:focus{
+    box-shadow: none;
+    border-color: none;
+   }
+
+   .accordion-button:not(.collapsed){
+    color: #000000;
+    background-color: #ededed;
+ 
+   }
+
+   .preview-btn{
+    background-color: #8c00ff;
+    border: none;
+   }
+   .preview-btn:hover{
+    background-color: #6100b1 !important;
+   }
+
+   
+   @media only screen and (min-width: 768px) {
+.gen-card {
+    width: 50%;
+    left: 25%;
+    position: relative;;
+}
+  }
