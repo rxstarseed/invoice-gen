@@ -102,9 +102,7 @@ input, select {
 }
 
 /*>//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<->//<-*/
-*{
-    transition: .3s;
-}
+
 textarea:focus, 
 textarea.form-control:focus, 
 input.form-control:focus, 
@@ -119,7 +117,6 @@ input[type=number]:focus,
 [contenteditable].form-control:focus {
   box-shadow: none;
   background-color: #f4f4f4;
-  border: none;
   color: #8c00ff;
 }
 .product-card-accordian{
@@ -200,7 +197,12 @@ display: none;
    @media only screen and (min-width: 768px) {
 .gen-card {
     width: 50%;
-    left: 25%;
     position: relative;;
 }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .textAreaLabel {
+      background-color: lightblue;
+    }
   }
