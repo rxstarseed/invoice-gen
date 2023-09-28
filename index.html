@@ -18,11 +18,11 @@
 
 <body class="bg-light">
   <div class="card gen-card text-center m-4">
-    <div class="card-header">
+    <div class="card-header p-3">
       Invoice Generator 
     </div>
-    <div class="card-body border-0">
-      <div class="input-group mb-3">
+    <div class="card-body pt-0  pe-0 ps-0  border-0 m-1">
+      <div class="input-group mb-1">
         <input onclick="invoiceNumGen()" id="invoiceNum" placeholder="Invoice #" type="number" min="1" max="1000" data-bs-toggle="tooltip" data-bs-title="Invoice #" class="form-control"aria-label="Invoice #">
         <input id="invoiceDate" type="date"  data-bs-toggle="tooltip" data-bs-title="Date"  class="form-control" aria-label="Date">
         <input id="invoiceDueDate" type="date" data-bs-toggle="tooltip" data-bs-title="Invoice Due" class="form-control" aria-label="Invoice Due">
@@ -33,11 +33,7 @@
           <h2 class="accordion-header">
             <button id="businessDetailHeader" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
               aria-expanded="false" aria-controls="collapseOne">
-              Business Details <span id="businessTabStatus" class="status position-absolute top-50 end-0 translate-middle-y me-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                </svg>
-              </span>
+              Business Details
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse border-0" data-bs-parent="#basicDetails">
@@ -56,8 +52,62 @@
                 <div class="input-group mb-3">
                   <input  id="businessStreetAddress"  type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Street Address"
                     placeholder="Street Address" aria-label="Street Address">
-                  <input  id="businessCity"  type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="City"
+                    <input  id="businessCity"  type="text" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="City"
                     placeholder="City" aria-label="City">
+                    <select class="form-control" placeholder="State" data-bs-toggle="tooltip" data-bs-title="State" id="businessState">
+                      <option value="">State</option> 
+                      <option value="AL">AL (Alabama)</option> 
+                      <option value="AK">AK (Alaska)</option> 
+                      <option value="AZ">AZ (Arizona)</option> 
+                      <option value="AR">AR (Arkansas)</option> 
+                      <option value="CA">CA (California)</option> 
+                      <option value="CO">CO (Colorado)</option> 
+                      <option value="CT">CT (Connecticut)</option> 
+                      <option value="DE">DE (Delaware)</option> 
+                      <option value="FL">FL (Florida)</option> 
+                      <option value="GA">GA (Georgia)</option> 
+                      <option value="HI">HI (Hawaii)</option> 
+                      <option value="ID">ID (Idaho)</option> 
+                      <option value="IL">IL (Illinois)</option> 
+                      <option value="IN">IN (Indiana)</option> 
+                      <option value="IA">IA (Iowa)</option> 
+                      <option value="KS">KS (Kansas)</option> 
+                      <option value="KY">KY (Kentucky)</option> 
+                      <option value="LA">LA (Louisiana)</option> 
+                      <option value="ME">ME (Maine)</option> 
+                      <option value="MD">MD (Maryland)</option> 
+                      <option value="MA">MA (Massachusetts)</option> 
+                      <option value="MI">MI (Michigan)</option> 
+                      <option value="MN">MN (Minnesota)</option> 
+                      <option value="MS">MS (Mississippi)</option> 
+                      <option value="MO">MO (Missouri)</option> 
+                      <option value="MT">MT (Montana)</option> 
+                      <option value="NE">NE (Nebraska)</option> 
+                      <option value="NV">NV (Nevada)</option> 
+                      <option value="NH">NH (New Hampshire)</option> 
+                      <option value="NJ">NJ (New Jersey)</option> 
+                      <option value="NM">NM (New Mexico)</option> 
+                      <option value="NY">NY (New York)</option>
+                      <option value="NC">NC (North Carolina)</option> 
+                      <option value="ND">ND (North Dakota)</option> 
+                      <option value="OH">OH (Ohio)</option> 
+                      <option value="OK">OK (Oklahoma)</option> 
+                      <option value="OR">OR (Oregon)</option> 
+                      <option value="PA">PA (Pennsylvania)</option> 
+                      <option value="RI">RI (Rhode Island)</option> 
+                      <option value="SC">SC (South Carolina)</option> 
+                      <option value="SD">SD (South Dakota)</option> 
+                      <option value="TN">TN (Tennessee)</option> 
+                      <option value="TX">TX (Texas)</option> 
+                      <option value="UT">UT (Utah)</option> 
+                      <option value="VT">VT (Vermont)</option> 
+                      <option value="VA">VA (Virginia)</option> 
+                      <option value="WA">WA (Washington)</option> 
+                      <option value="WV">WV (Wisconsin)</option> 
+                      <option value="WY">WY (Wyoming)</option> 
+                       
+                  </select>
+                  
                   <input  id="businessZip"  type="number" class="form-control detail-input" data-bs-toggle="tooltip" data-bs-title="Zip Code"
                     placeholder="Zip Code" aria-label="Zip Code">
                 </div>
@@ -77,11 +127,7 @@
           <h2 class="accordion-header">
             <button  id="billDetailHeader"  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Bill To Details<span id="clientTabStatus" class="status position-absolute top-50 end-0 translate-middle-y me-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                </svg>
-              </span>
+              Bill To Details
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#basicDetails">
@@ -97,6 +143,59 @@
                   placeholder="Street Address" aria-label="Client's Street Address" autocomplete="off">
                 <input id="clientCity" type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Client's City"
                   placeholder="City" aria-label="Client's City" autocomplete="off">
+                  <select class="form-control" placeholder="State" data-bs-toggle="tooltip" data-bs-title="State" id="clientState">
+                    <option value="">State</option> 
+                    <option value="AL">AL (Alabama)</option> 
+                    <option value="AK">AK (Alaska)</option> 
+                    <option value="AZ">AZ (Arizona)</option> 
+                    <option value="AR">AR (Arkansas)</option> 
+                    <option value="CA">CA (California)</option> 
+                    <option value="CO">CO (Colorado)</option> 
+                    <option value="CT">CT (Connecticut)</option> 
+                    <option value="DE">DE (Delaware)</option> 
+                    <option value="FL">FL (Florida)</option> 
+                    <option value="GA">GA (Georgia)</option> 
+                    <option value="HI">HI (Hawaii)</option> 
+                    <option value="ID">ID (Idaho)</option> 
+                    <option value="IL">IL (Illinois)</option> 
+                    <option value="IN">IN (Indiana)</option> 
+                    <option value="IA">IA (Iowa)</option> 
+                    <option value="KS">KS (Kansas)</option> 
+                    <option value="KY">KY (Kentucky)</option> 
+                    <option value="LA">LA (Louisiana)</option> 
+                    <option value="ME">ME (Maine)</option> 
+                    <option value="MD">MD (Maryland)</option> 
+                    <option value="MA">MA (Massachusetts)</option> 
+                    <option value="MI">MI (Michigan)</option> 
+                    <option value="MN">MN (Minnesota)</option> 
+                    <option value="MS">MS (Mississippi)</option> 
+                    <option value="MO">MO (Missouri)</option> 
+                    <option value="MT">MT (Montana)</option> 
+                    <option value="NE">NE (Nebraska)</option> 
+                    <option value="NV">NV (Nevada)</option> 
+                    <option value="NH">NH (New Hampshire)</option> 
+                    <option value="NJ">NJ (New Jersey)</option> 
+                    <option value="NM">NM (New Mexico)</option> 
+                    <option value="NY">NY (New York)</option>
+                    <option value="NC">NC (North Carolina)</option> 
+                    <option value="ND">ND (North Dakota)</option> 
+                    <option value="OH">OH (Ohio)</option> 
+                    <option value="OK">OK (Oklahoma)</option> 
+                    <option value="OR">OR (Oregon)</option> 
+                    <option value="PA">PA (Pennsylvania)</option> 
+                    <option value="RI">RI (Rhode Island)</option> 
+                    <option value="SC">SC (South Carolina)</option> 
+                    <option value="SD">SD (South Dakota)</option> 
+                    <option value="TN">TN (Tennessee)</option> 
+                    <option value="TX">TX (Texas)</option> 
+                    <option value="UT">UT (Utah)</option> 
+                    <option value="VT">VT (Vermont)</option> 
+                    <option value="VA">VA (Virginia)</option> 
+                    <option value="WA">WA (Washington)</option> 
+                    <option value="WV">WV (Wisconsin)</option> 
+                    <option value="WY">WY (Wyoming)</option> 
+                     
+                </select>
                 <input  id="clientZip" type="text" class="form-control" data-bs-toggle="tooltip" data-bs-title="Client's Zip Code"
                   placeholder="Zip Code" aria-label="Client's Zip Code" autocomplete="off">
               </div>
@@ -175,8 +274,8 @@
                   </div>
                   <div class="col">
                     <div class="input-group mt-3">
-                      <input id="tax" type="number" class="form-control"  data-bs-toggle="tooltip" data-bs-title="Tax%" placeholder="Tax%" aria-label="Tax%">
-                      <input id="discount" type="number" class="form-control"  data-bs-toggle="tooltip" data-bs-title="Discount%" placeholder="Discount%" aria-label="Discount%">
+                      <input id="tax" type="number" min="0" max="100" class="form-control"  data-bs-toggle="tooltip" data-bs-title="Tax%" placeholder="Tax%" aria-label="Tax%">
+                      <input id="discount" type="number" min="0" max="100" class="form-control"  data-bs-toggle="tooltip" data-bs-title="Discount%" placeholder="Discount%" aria-label="Discount%">
                     </div>
                   </div>
                 </div>
@@ -187,8 +286,8 @@
         
       </div>
     </div>
-    <div class="card-footer text-body-secondary">
-      <button onclick="preview()" class="btn preview-btn text-white w-100">
+    <div class="card-footer text-body-secondary bg-transparent border-0">
+      <button onclick="preview()" class="btn mb-2 preview-btn text-white w-100">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-play-fill float-start" viewBox="0 0 16 16">
           <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
         </svg> Preview</button>

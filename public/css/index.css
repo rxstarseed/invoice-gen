@@ -118,6 +118,7 @@ input[type=number]:focus,
   box-shadow: none;
   background-color: #f4f4f4;
   color: #8c00ff;
+  border: 1px solid #8c00ff;
 }
 .product-card-accordian{
     line-height: 50px;
@@ -193,6 +194,11 @@ display: none;
     background-color: #6100b1 !important;
    }
 
+   .btn:disabled{
+    background-color: #000000;
+    opacity: 1;
+   }
+
    
    @media only screen and (min-width: 768px) {
 .gen-card {
@@ -201,8 +207,3 @@ display: none;
 }
   }
 
-  @media only screen and (max-width: 600px) {
-    .textAreaLabel {
-      background-color: lightblue;
-    }
-  }

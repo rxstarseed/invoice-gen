@@ -35,7 +35,7 @@ const calcBalances = () =>{
     calcBalance += (products[i].product_price * products[i].product_quantity);
     }
     if (details.discount != null || undefined){
-        calDiscount += parseFloat(details.discount / 100)
+        calDiscount = parseFloat(details.discount / 100)
        calcBalance += parseFloat(calcBalance % calDiscount);
     }
 
@@ -52,12 +52,17 @@ const calcBalances = () =>{
 const calcSubTotal = () =>{
     var subTotal = 0;
     var subDiscount;
+    debugger
     for (var i = 0; i < products.length; i++){
         subTotal += (products[i].product_price * products[i].product_quantity);
+        console.log(subTotal)
         }
         if (details.discount != null || undefined){
-            subDiscount += parseFloat(details.discount / 100)
-            subTotal += parseFloat( subTotal % subDiscount);
+            subDiscount = parseFloat(details.discount / 100)
+            subTotal += parseFloat( subTotal - subDiscount);
+        }
+        else{
+            return subTotal;
         }
        return subTotal;
 }

@@ -12,6 +12,7 @@ var previewTemp = {
     businessLName: '',
     businessStreetAddress: '',
     businessCity: '',
+    businessState:'',
     businessZip: '',
     businessPhone: '',
     businessEmail: '',
@@ -19,6 +20,7 @@ var previewTemp = {
     clientLName: '',
     clientStreetAddress: '',
     clientCity: '',
+    clientState: '',
     clientZip: '',
     clientNumber: '',
     clientEmail: '',
@@ -30,16 +32,9 @@ var productList = [
     {
         "id": 1,
         "product_title": "Product Title",
-        "product_desc": "Product Description",
-        "product_price": 0,
-        "product_quantity": 1
-    },
-    {
-        "id": 2,
-        "product_title": "Product Title",
-        "product_desc": "Product Description",
-        "product_price": 0,
-        "product_quantity": 1
+        "product_desc": "",
+        "product_price": "",
+        "product_quantity": ""
     }]
 const removeItem = (id) => {
     var index = productList.map(x => {
@@ -87,7 +82,6 @@ const toggle = (elem, id) => {
 
 const saveInput = (elem, id) => {
     const soup = $(elem).val()
-    console.log(soup)
     if ($(elem).attr('data-desc')) {
 
 
@@ -130,7 +124,6 @@ const init = () => {
     for (var i = 0; i < productList.length; i++) {
         var li = $('<li>');
         $(li).attr('value', productList[i].id).addClass('list-group product border-0 mt-1');
-        console.log(productList[i]);
         $(li).html(`
     <div class="card w-100 product-card">
       <div onclick="toggle(this, ${productList[i].id})" class="card-header bg-transparent border-0 product-card-accordian m-0 p-0">
@@ -179,6 +172,7 @@ const preview = () =>{
     previewTemp.businessLName = $('#businessLName').val();
     previewTemp.businessStreetAddress = $('#businessStreetAddress').val();
     previewTemp.businessCity = $('#businessCity').val();
+    previewTemp.businessState = $('#businessState').val();
     previewTemp.businessZip = $('#businessZip').val();
     previewTemp.businessPhone = $('#businessNumber').val();
     previewTemp.businessEmail = $('#businessEmail').val();
@@ -186,12 +180,13 @@ const preview = () =>{
     previewTemp.clientLName = $('#clientLName').val();
     previewTemp.clientStreetAddress = $('#clientStreetAddress').val();
     previewTemp.clientCity = $('#clientCity').val();
+    previewTemp.clientState = $('#clientState').val();
     previewTemp.clientZip = $('#clientZip').val();
     previewTemp.clientNumber = $('#clientNumber').val();
     previewTemp.clientEmail = $('#clientEmail').val();
     previewTemp.paymentNotes = $('#paymentNotes').val();
-    previewTemp.tax = parseInt($('#tax').val());
-    previewTemp.discount = parseInt($('#discount').val());
+    previewTemp.tax = parseFloat($('#tax').val());
+    previewTemp.discount = parseFloat($('#discount').val());
 
     localStorage.setItem("Preview", JSON.stringify(previewTemp));
     localStorage.setItem("Products", JSON.stringify(productList));
