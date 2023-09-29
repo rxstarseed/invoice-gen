@@ -202,8 +202,10 @@ display: none;
    
    @media only screen and (min-width: 768px) {
 .gen-card {
-    width: 50%;
-    position: relative;;
+    position: relative;
+    left: 25%;
+    width: 40%;
+    position: relative;
 }
   }
 
